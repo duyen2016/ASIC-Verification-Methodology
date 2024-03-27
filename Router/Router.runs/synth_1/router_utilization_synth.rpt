@@ -1,14 +1,14 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
----------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Tue Mar 26 23:29:44 2024
+| Date         : Wed Mar 27 16:23:37 2024
 | Host         : MSI running 64-bit major release  (build 9200)
-| Command      : report_utilization -file arbiter_utilization_synth.rpt -pb arbiter_utilization_synth.pb
-| Design       : arbiter
+| Command      : report_utilization -file router_utilization_synth.rpt -pb router_utilization_synth.pb
+| Design       : router
 | Device       : xczu9eg-ffvb1156-2-e
 | Speed File   : -2
 | Design State : Synthesized
----------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -32,14 +32,14 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| CLB LUTs*               |  122 |     0 |          0 |    274080 |  0.04 |
-|   LUT as Logic          |  122 |     0 |          0 |    274080 |  0.04 |
+| CLB LUTs*               |  347 |     0 |          0 |    274080 |  0.13 |
+|   LUT as Logic          |  347 |     0 |          0 |    274080 |  0.13 |
 |   LUT as Memory         |    0 |     0 |          0 |    144000 |  0.00 |
-| CLB Registers           |   15 |     0 |          0 |    548160 | <0.01 |
-|   Register as Flip Flop |    0 |     0 |          0 |    548160 |  0.00 |
-|   Register as Latch     |   15 |     0 |          0 |    548160 | <0.01 |
+| CLB Registers           |   94 |     0 |          0 |    548160 |  0.02 |
+|   Register as Flip Flop |   94 |     0 |          0 |    548160 |  0.02 |
+|   Register as Latch     |    0 |     0 |          0 |    548160 |  0.00 |
 | CARRY8                  |    0 |     0 |          0 |     34260 |  0.00 |
-| F7 Muxes                |    0 |     0 |          0 |    137040 |  0.00 |
+| F7 Muxes                |    5 |     0 |          0 |    137040 | <0.01 |
 | F8 Muxes                |    0 |     0 |          0 |     68520 |  0.00 |
 | F9 Muxes                |    0 |     0 |          0 |     34260 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
@@ -59,9 +59,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 15    |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 0     |          Yes |       Reset |            - |
+| 0     |          Yes |           - |        Reset |
+| 49    |          Yes |         Set |            - |
+| 45    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -94,7 +94,7 @@ Table of Contents
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| Bonded IOB |   59 |     0 |          0 |       328 | 17.99 |
+| Bonded IOB |   99 |     0 |          0 |       328 | 30.18 |
 +------------+------+-------+------------+-----------+-------+
 
 
@@ -104,8 +104,8 @@ Table of Contents
 +----------------------+------+-------+------------+-----------+-------+
 |       Site Type      | Used | Fixed | Prohibited | Available | Util% |
 +----------------------+------+-------+------------+-----------+-------+
-| GLOBAL CLOCK BUFFERs |    0 |     0 |          0 |       404 |  0.00 |
-|   BUFGCE             |    0 |     0 |          0 |       116 |  0.00 |
+| GLOBAL CLOCK BUFFERs |    1 |     0 |          0 |       404 |  0.25 |
+|   BUFGCE             |    1 |     0 |          0 |       116 |  0.86 |
 |   BUFGCE_DIV         |    0 |     0 |          0 |        16 |  0.00 |
 |   BUFG_GT            |    0 |     0 |          0 |       168 |  0.00 |
 |   BUFG_PS            |    0 |     0 |          0 |        72 |  0.00 |
@@ -153,15 +153,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT4     |   75 |                 CLB |
-| LUT6     |   55 |                 CLB |
-| LUT3     |   40 |                 CLB |
-| OBUF     |   32 |                 I/O |
-| INBUF    |   27 |                 I/O |
-| IBUFCTRL |   27 |              Others |
-| LDCE     |   15 |            Register |
-| LUT5     |    5 |                 CLB |
-| LUT2     |    4 |                 CLB |
+| LUT6     |  218 |                 CLB |
+| LUT4     |   78 |                 CLB |
+| INBUF    |   51 |                 I/O |
+| IBUFCTRL |   51 |              Others |
+| FDSE     |   49 |            Register |
+| OBUF     |   48 |                 I/O |
+| FDRE     |   45 |            Register |
+| LUT5     |   35 |                 CLB |
+| LUT2     |   29 |                 CLB |
+| LUT3     |   22 |                 CLB |
+| LUT1     |   22 |                 CLB |
+| MUXF7    |    5 |                 CLB |
+| BUFGCE   |    1 |               Clock |
 +----------+------+---------------------+
 
 

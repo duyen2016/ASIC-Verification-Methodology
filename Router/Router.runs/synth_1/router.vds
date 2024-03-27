@@ -1,14 +1,15 @@
-
-*** Running vivado
-    with args -log router.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source router.tcl
-
-
-
-****** Vivado v2021.2 (64-bit)
-  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
-  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Mar 27 16:22:54 2024
+# Process ID: 6472
+# Current directory: E:/CE409/ASIC-Verification-Methodology/Router/Router.runs/synth_1
+# Command line: vivado.exe -log router.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source router.tcl
+# Log file: E:/CE409/ASIC-Verification-Methodology/Router/Router.runs/synth_1/router.vds
+# Journal file: E:/CE409/ASIC-Verification-Methodology/Router/Router.runs/synth_1\vivado.jou
+# Running On: MSI, OS: Windows, CPU Frequency: 2096 MHz, CPU Physical cores: 12, Host memory: 16498 MB
+#-----------------------------------------------------------
 source router.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/utils_1/imports/synth_1/arbiter.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/utils_1/imports/synth_1/arbiter.dcp for incremental synthesis

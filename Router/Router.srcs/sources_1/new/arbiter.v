@@ -21,35 +21,18 @@
 
 
 module arbiter(
-    input [4:0][0:15] header,
+    input [63:0] address_t,
+    input [15:0] getheader_n,
     input [0:15] frame_n,
-    inout [15:0] frameo_n,
-    input reset_n, 
+    input reset_n, clk, 
+    output [15:0] frameo_n,
     output reg [15:0] wait_n
     );
     reg [0:15] frameo_nt;
-    wire [15:0] getheader_n;
     wire [3:0] address [15:0];
-    
-    assign frameo_n = frameo_nt;
-    assign {getheader_n[0], address[0]} =  header[0];
-    assign {getheader_n[1], address[1]} =  header[1];
-    assign {getheader_n[2], address[2]} =  header[2];
-    assign {getheader_n[3], address[3]} =  header[3];
-    assign {getheader_n[4], address[4]} =  header[4];
-    assign {getheader_n[5], address[5]} =  header[5];
-    assign {getheader_n[6], address[6]} =  header[6];
-    assign {getheader_n[7], address[7]} =  header[7];
-    assign {getheader_n[8], address[8]} =  header[8];
-    assign {getheader_n[9], address[9]} =  header[9];
-    assign {getheader_n[10], address[10]} =  header[10];
-    assign {getheader_n[11], address[11]} =  header[11];
-    assign {getheader_n[12], address[12]} =  header[12];
-    assign {getheader_n[13], address[13]} =  header[13];
-    assign {getheader_n[14], address[14]} =  header[14];
-    assign {getheader_n[15], address[15]} =  header[15];
-      
-    always @(*) begin
+    assign {address[15],address[14], address[13], address[12], address[11], address[10], address[9], address[8], address[7], address[6], address[5], address[4], address[3], address[2], address[1], address[0]} = address_t;
+    assign frameo_n = frameo_nt;      
+    always @(posedge clk) begin
         if (!reset_n) begin
             wait_n = 16'hffff;
             frameo_nt = 16'hffff;
