@@ -1,0 +1,22 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module arbiter
+ERROR: [VRFC 10-3161] cannot assign to memory 'getheader_n' directly [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:33]
+ERROR: [VRFC 10-800] illegal concatenation of unpacked value [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:33]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register frameo_n is not permitted, left-hand side should be reg/integer/time/genvar [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:36]
+ERROR: [VRFC 10-3155] cannot access memory 'getheader_n' directly [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:36]
+ERROR: [VRFC 10-805] illegal context for unpacked expression [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:36]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register frameo_n is not permitted, left-hand side should be reg/integer/time/genvar [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:38]
+ERROR: [VRFC 10-3155] cannot access memory 'getheader_n' directly [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:38]
+ERROR: [VRFC 10-805] illegal context for unpacked expression [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:38]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register frameo_n is not permitted, left-hand side should be reg/integer/time/genvar [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:40]
+ERROR: [VRFC 10-3155] cannot access memory 'getheader_n' directly [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:40]
+ERROR: [VRFC 10-805] illegal context for unpacked expression [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:40]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register frameo_n is not permitted, left-hand side should be reg/integer/time/genvar [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:42]
+ERROR: [VRFC 10-3155] cannot access memory 'getheader_n' directly [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:42]
+ERROR: [VRFC 10-805] illegal context for unpacked expression [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:42]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register frameo_n is not permitted, left-hand side should be reg/integer/time/genvar [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:44]
+ERROR: [VRFC 10-3155] cannot access memory 'getheader_n' directly [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:44]
+ERROR: [VRFC 10-805] illegal context for unpacked expression [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:44]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register frameo_n is not permitted, left-hand side should be reg/integer/time/genvar [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:46]
+ERROR: [VRFC 10-3155] cannot access memory 'getheader_n' directly [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v:46]
+INFO: [#UNDEF] Sorry, too many errors..
