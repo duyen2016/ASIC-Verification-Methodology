@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1711531371" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/arbiter.dcp">
+<GenRun Id="synth_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1711602668" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/arbiter.dcp">
   <File Type="PA-TCL" Name="router.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="router_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="router_reports.tcl"/>
   <File Type="RDS-RDS" Name="router.vds"/>
   <File Type="RDS-UTIL" Name="router_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="router_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="router.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="router_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="router_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/arbiter.v">

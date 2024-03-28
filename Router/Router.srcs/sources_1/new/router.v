@@ -21,9 +21,9 @@
 
 
 module router(
-    input [15:0] din, valid_n, frame_n, busy_n,
+    input [15:0] din, valid_n, frame_n,
     input reset_n, clk,
-    output [15:0] dout, valido_n, frameo_n
+    output [15:0] dout, valido_n, frameo_n, busy_n
     );
     wire [15:0] getheader_n;
     wire [63:0] address;

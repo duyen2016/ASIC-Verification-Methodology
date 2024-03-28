@@ -4,8 +4,8 @@ Oct 19 2021
 03:16:22
 E:/CE409/ASIC-Verification-Methodology/Router/Router.sim/sim_1/behav/xsim/glbl.v,1634335545,verilog,,,,glbl,,uvm,,,,,,
 E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/router_io.sv,1711561279,systemVerilog,,E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv,,router_io,,uvm,,,,,,
-E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/router_test_top.sv,1711559744,systemVerilog,,,,router_test_top,,uvm,,,,,,
-E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv,1711560721,systemVerilog,,E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/router_test_top.sv,,test,,uvm,,,,,,
+E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/router_test_top.sv,1711560283,systemVerilog,,,,router_test_top,,uvm,,,,,,
+E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv,1711561179,systemVerilog,,E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/router_test_top.sv,,test,,uvm,,,,,,
 E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/arbiter.v,1711531181,verilog,,E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/router.v,,arbiter,,uvm,,,,,,
-E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/router.v,1711531367,verilog,,E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/switch.v,,router,,uvm,,,,,,
-E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/switch.v,1711530960,verilog,,,,switch,,uvm,,,,,,
+E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/router.v,1711602232,verilog,,E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/switch.v,,router,,uvm,,,,,,
+E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sources_1/new/switch.v,1711602662,verilog,,,,switch,,uvm,,,,,,

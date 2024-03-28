@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Wed Mar 27 16:23:37 2024
+| Date         : Thu Mar 28 12:12:10 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_utilization -file router_utilization_synth.rpt -pb router_utilization_synth.pb
 | Design       : router
@@ -32,14 +32,14 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| CLB LUTs*               |  347 |     0 |          0 |    274080 |  0.13 |
-|   LUT as Logic          |  347 |     0 |          0 |    274080 |  0.13 |
+| CLB LUTs*               | 1053 |     0 |          0 |    274080 |  0.38 |
+|   LUT as Logic          | 1053 |     0 |          0 |    274080 |  0.38 |
 |   LUT as Memory         |    0 |     0 |          0 |    144000 |  0.00 |
-| CLB Registers           |   94 |     0 |          0 |    548160 |  0.02 |
-|   Register as Flip Flop |   94 |     0 |          0 |    548160 |  0.02 |
+| CLB Registers           |  160 |     0 |          0 |    548160 |  0.03 |
+|   Register as Flip Flop |  160 |     0 |          0 |    548160 |  0.03 |
 |   Register as Latch     |    0 |     0 |          0 |    548160 |  0.00 |
 | CARRY8                  |    0 |     0 |          0 |     34260 |  0.00 |
-| F7 Muxes                |    5 |     0 |          0 |    137040 | <0.01 |
+| F7 Muxes                |   16 |     0 |          0 |    137040 |  0.01 |
 | F8 Muxes                |    0 |     0 |          0 |     68520 |  0.00 |
 | F9 Muxes                |    0 |     0 |          0 |     34260 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
@@ -60,8 +60,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 49    |          Yes |         Set |            - |
-| 45    |          Yes |       Reset |            - |
+| 112   |          Yes |         Set |            - |
+| 48    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -94,7 +94,7 @@ Table of Contents
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| Bonded IOB |   99 |     0 |          0 |       328 | 30.18 |
+| Bonded IOB |  114 |     0 |          0 |       328 | 34.76 |
 +------------+------+-------+------------+-----------+-------+
 
 
@@ -153,18 +153,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  218 |                 CLB |
-| LUT4     |   78 |                 CLB |
-| INBUF    |   51 |                 I/O |
-| IBUFCTRL |   51 |              Others |
-| FDSE     |   49 |            Register |
-| OBUF     |   48 |                 I/O |
-| FDRE     |   45 |            Register |
-| LUT5     |   35 |                 CLB |
-| LUT2     |   29 |                 CLB |
-| LUT3     |   22 |                 CLB |
-| LUT1     |   22 |                 CLB |
-| MUXF7    |    5 |                 CLB |
+| LUT6     |  768 |                 CLB |
+| LUT4     |  260 |                 CLB |
+| LUT2     |  141 |                 CLB |
+| FDSE     |  112 |            Register |
+| OBUF     |   64 |                 I/O |
+| INBUF    |   50 |                 I/O |
+| IBUFCTRL |   50 |              Others |
+| FDRE     |   48 |            Register |
+| LUT1     |   33 |                 CLB |
+| MUXF7    |   16 |                 CLB |
+| LUT5     |   16 |                 CLB |
 | BUFGCE   |    1 |               Clock |
 +----------+------+---------------------+
 

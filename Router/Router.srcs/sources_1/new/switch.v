@@ -28,7 +28,6 @@ module switch(
     output reg [15:0] getheader_n    
     );
     reg [4:0] header [15:0];
-    reg [3:0] counter = 15;
     wire [3:0] address_t[15:0];
     assign address = {address_t[15],address_t[14], address_t[13], address_t[12], address_t[11], address_t[10], address_t[9], address_t[8], address_t[7], address_t[6], address_t[5], address_t[4], address_t[3], address_t[2], address_t[1], address_t[0]};
     assign address_t[0] = (!getheader_n[0])? header[0][3:0]:4'bz;
@@ -48,52 +47,58 @@ module switch(
     assign address_t[14] = (!getheader_n[14])? header[14][3:0]:4'bz;
     assign address_t[15] = (!getheader_n[15])? header[15][3:0]:4'bz;
     always @(posedge clk) begin
-        counter = counter + 1; 
         if (!reset_n) begin
-            valido_n = 16'b1;
-            {header[0],header[1],header[2],header[3],header[4],header[5],header[6],header[7],header[8],header[9],header[10],header[11],header[12],header[13],header[14],header[15]} = {16{5'b11110}};
-            counter = 0;
+            valido_n = 16'hffff;
+            header[0] = 5'b11110;
+            header[1] = 5'b11110;
+            header[2] = 5'b11110;
+            header[3] = 5'b11110;
+            header[4] = 5'b11110;
+            header[5] = 5'b11110;
+            header[6] = 5'b11110;
+            header[7] = 5'b11110;
+            header[8] = 5'b11110;
+            header[9] = 5'b11110;
+            header[10] = 5'b11110;
+            header[11] = 5'b11110;
+            header[12] = 5'b11110;
+            header[13] = 5'b11110;
+            header[14] = 5'b11110;
+            header[15] = 5'b11110;
         end
-        else if (counter < 15) begin
-            counter = counter + 1;
-            valido_n = 16'b1;
-            {header[0],header[1],header[2],header[3],header[4],header[5],header[6],header[7],header[8],header[9],header[10],header[11],header[12],header[13],header[14],header[15]} = {16{5'b11110}};
-        end 
         else begin
-            getheader_n[0] = header[4][0];
-            header[0] = (getheader_n[0])? {header[0], din[0]}:header[0];
-            getheader_n[1] = header[4][1];
-            header[1] = (getheader_n[1])? {header[1][3:0], din[1]}:header[1];
-            getheader_n[2] = header[4][2];
-            header[2] = (getheader_n[2])? {header[2][3:0], din[2]}:header[2];
-            getheader_n[3] = header[4][3];
-            header[3] = (getheader_n[3])? {header[3][3:0], din[3]}:header[3];
+            getheader_n[0] = header[0][4];
+            header[0] = (getheader_n[0] && !frame_n[0])? {header[0], din[0]}:header[0];
+            getheader_n[1] = header[1][4];
+            header[1] = (getheader_n[1] && !frame_n[1])? {header[1][3:0], din[1]}:header[1];
+            getheader_n[2] = header[2][4];
+            header[2] = (getheader_n[2] && !frame_n[2])? {header[2][3:0], din[2]}:header[2];
+            getheader_n[3] = header[3][4];
+            header[3] = (getheader_n[3] && !frame_n[3])? {header[3][3:0], din[3]}:header[3];
             getheader_n[4] = header[4][4];
-            header[4] = (getheader_n[4])? {header[4][3:0], din[4]}:header[4];
-            getheader_n[5] = header[4][5];
-            header[5] = (getheader_n[5])? {header[5][3:0], din[5]}:header[5];
-            getheader_n[6] = header[4][6];
-            header[6] = (getheader_n[6])? {header[6][3:0], din[6]}:header[6];
-            getheader_n[7] = header[4][7];
-            header[7] = (getheader_n[7])? {header[7][3:0], din[7]}:header[7];
-            getheader_n[8] = header[4][8];
-            header[8] = (getheader_n[8])? {header[8][3:0], din[8]}:header[8];
-            getheader_n[9] = header[4][9];
-            header[9] = (getheader_n[9])? {header[9][3:0], din[9]}:header[9];
-            getheader_n[10] = header[4][10];
-            header[10] = (getheader_n[10])? {header[10][3:0], din[10]}:header[10];
-            getheader_n[11] = header[4][11];
-            header[11] = (getheader_n[11])? {header[11][3:0], din[11]}:header[11];
-            getheader_n[12] = header[4][12];
-            header[12] = (getheader_n[12])? {header[12][3:0], din[12]}:header[12];
-            getheader_n[13] = header[4][13];
-            header[13] = (getheader_n[13])? {header[13][3:0], din[13]}:header[13];
-            getheader_n[14] = header[4][14];
-            header[14] = (getheader_n[14])? {header[14][3:0], din[14]}:header[14];
-            getheader_n[15] = header[4][15];
-            header[15] = (getheader_n[15])? {header[15][3:0], din[15]}:header[15];
-            getheader_n[16] = header[4][16];
-            header[16] = (getheader_n[16])? {header[16][3:0], din[16]}:header[16];
+            header[4] = (getheader_n[4] && !frame_n[4])? {header[4][3:0], din[4]}:header[4];
+            getheader_n[5] = header[5][4];
+            header[5] = (getheader_n[5] && !frame_n[5])? {header[5][3:0], din[5]}:header[5];
+            getheader_n[6] = header[6][4];
+            header[6] = (getheader_n[6] && !frame_n[6])? {header[6][3:0], din[6]}:header[6];
+            getheader_n[7] = header[7][4];
+            header[7] = (getheader_n[7] && !frame_n[7])? {header[7][3:0], din[7]}:header[7];
+            getheader_n[8] = header[8][4];
+            header[8] = (getheader_n[8] && !frame_n[8])? {header[8][3:0], din[8]}:header[8];
+            getheader_n[9] = header[9][4];
+            header[9] = (getheader_n[9] && !frame_n[9])? {header[9][3:0], din[9]}:header[9];
+            getheader_n[10] = header[10][4];
+            header[10] = (getheader_n[10] && !frame_n[10])? {header[10][3:0], din[10]}:header[10];
+            getheader_n[11] = header[11][4];
+            header[11] = (getheader_n[11] && !frame_n[11])? {header[11][3:0], din[11]}:header[11];
+            getheader_n[12] = header[12][4];
+            header[12] = (getheader_n[12] && !frame_n[12])? {header[12][3:0], din[12]}:header[12];
+            getheader_n[13] = header[13][4];
+            header[13] = (getheader_n[13] && !frame_n[13])? {header[13][3:0], din[13]}:header[13];
+            getheader_n[14] = header[14][4];
+            header[14] = (getheader_n[14] && !frame_n[14])? {header[14][3:0], din[14]}:header[14];
+            getheader_n[15] = header[15][4];
+            header[15] = (getheader_n[15] && !frame_n[15])? {header[15][3:0], din[15]}:header[15];
             if (!wait_n[0] && (!getheader_n[0])) begin
                 valido_n[address_t[0]] = valid_n[0];
                 dout[address_t[0]] = din[0];
