@@ -4,7 +4,8 @@ Running: E:/Program/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3245] cycle delay operator requires a default clocking to be specified [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:35]
+WARNING: [VRFC 10-3245] cycle delay operator requires a default clocking to be specified [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:37]
+WARNING: [VRFC 10-3245] cycle delay operator requires a default clocking to be specified [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:47]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
