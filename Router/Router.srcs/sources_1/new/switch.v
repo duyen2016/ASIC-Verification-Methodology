@@ -30,22 +30,22 @@ module switch(
     reg [4:0] header [15:0];
     wire [3:0] address_t[15:0];
     assign address = {address_t[15],address_t[14], address_t[13], address_t[12], address_t[11], address_t[10], address_t[9], address_t[8], address_t[7], address_t[6], address_t[5], address_t[4], address_t[3], address_t[2], address_t[1], address_t[0]};
-    assign address_t[0] = (!getheader_n[0])? header[0][3:0]:4'bz;
-    assign address_t[1] = (!getheader_n[1])? header[1][3:0]:4'bz;
-    assign address_t[2] = (!getheader_n[2])? header[2][3:0]:4'bz;
-    assign address_t[3] = (!getheader_n[3])? header[3][3:0]:4'bz;
-    assign address_t[4] = (!getheader_n[4])? header[4][3:0]:4'bz;
-    assign address_t[5] = (!getheader_n[5])? header[5][3:0]:4'bz;
-    assign address_t[6] = (!getheader_n[6])? header[6][3:0]:4'bz;
-    assign address_t[7] = (!getheader_n[7])? header[7][3:0]:4'bz;
-    assign address_t[8] = (!getheader_n[8])? header[8][3:0]:4'bz;
-    assign address_t[9] = (!getheader_n[9])? header[9][3:0]:4'bz;
-    assign address_t[10] = (!getheader_n[10])? header[10][3:0]:4'bz;
-    assign address_t[11] = (!getheader_n[11])? header[11][3:0]:4'bz;
-    assign address_t[12] = (!getheader_n[12])? header[12][3:0]:4'bz;
-    assign address_t[13] = (!getheader_n[13])? header[13][3:0]:4'bz;
-    assign address_t[14] = (!getheader_n[14])? header[14][3:0]:4'bz;
-    assign address_t[15] = (!getheader_n[15])? header[15][3:0]:4'bz;
+    assign address_t[0] = (!getheader_n[0])? header[0][3:0]:4'bx;
+    assign address_t[1] = (!getheader_n[1])? header[1][3:0]:4'bx;
+    assign address_t[2] = (!getheader_n[2])? header[2][3:0]:4'bx;
+    assign address_t[3] = (!getheader_n[3])? header[3][3:0]:4'bx;
+    assign address_t[4] = (!getheader_n[4])? header[4][3:0]:4'bx;
+    assign address_t[5] = (!getheader_n[5])? header[5][3:0]:4'bx;
+    assign address_t[6] = (!getheader_n[6])? header[6][3:0]:4'bx;
+    assign address_t[7] = (!getheader_n[7])? header[7][3:0]:4'bx;
+    assign address_t[8] = (!getheader_n[8])? header[8][3:0]:4'bx;
+    assign address_t[9] = (!getheader_n[9])? header[9][3:0]:4'bx;
+    assign address_t[10] = (!getheader_n[10])? header[10][3:0]:4'bx;
+    assign address_t[11] = (!getheader_n[11])? header[11][3:0]:4'bx;
+    assign address_t[12] = (!getheader_n[12])? header[12][3:0]:4'bx;
+    assign address_t[13] = (!getheader_n[13])? header[13][3:0]:4'bx;
+    assign address_t[14] = (!getheader_n[14])? header[14][3:0]:4'bx;
+    assign address_t[15] = (!getheader_n[15])? header[15][3:0]:4'bx;
     always @(posedge clk) begin
         if (!reset_n) begin
             valido_n = 16'hffff;
