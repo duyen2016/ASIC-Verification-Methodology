@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Mar 29 13:20:44 2024
+# Process ID: 18216
+# Current directory: E:/CE409/ASIC-Verification-Methodology/Router
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17628 E:\CE409\ASIC-Verification-Methodology\Router\Router.xpr
+# Log file: E:/CE409/ASIC-Verification-Methodology/Router/vivado.log
+# Journal file: E:/CE409/ASIC-Verification-Methodology/Router\vivado.jou
+# Running On: MSI, OS: Windows, CPU Frequency: 2096 MHz, CPU Physical cores: 12, Host memory: 16498 MB
+#----------------------------------------------------------ststart_guopopen_project E:/CE409/ASIC-Verification-Methodology/Router/Router.xpupupdate_compile_order -fileset sources_1
