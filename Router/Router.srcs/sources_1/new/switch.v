@@ -21,7 +21,7 @@
 
 
 module switch(
-    input [15:0]din, valid_n, frame_n, wait_n,
+    input [15:0]din, valid_n, frame_n, wait_n, frameo_n,
     input reset_n, clk, 
     output reg [15:0] dout, valido_n, 
     output [63:0] address,
@@ -29,9 +29,10 @@ module switch(
     );
     reg [4:0] header [15:0];
     wire [3:0] address_t[15:0];
-    reg [15:0] frame_nt;
+    reg [15:0] frame_nt, frameo_nt;
     always @(posedge clk) begin
         frame_nt <= frame_n;
+        frameo_nt <= frameo_n;               
     end
     assign address = {address_t[15],address_t[14], address_t[13], address_t[12], address_t[11], address_t[10], address_t[9], address_t[8], address_t[7], address_t[6], address_t[5], address_t[4], address_t[3], address_t[2], address_t[1], address_t[0]};
     assign address_t[0] = (!getheader_n[0])? header[0][3:0]:4'bx;
@@ -142,7 +143,7 @@ module switch(
                 valido_n[address_t[0]] = valid_n[0];
                 dout[address_t[0]] = din[0];
             end
-            else if (frame_nt[0]) begin 
+            else if (frameo_n[address_t[0]] & wait_n[0]) begin 
                 valido_n[address_t[0]] = 16'hx;
                 dout[address_t[0]] = 16'hx;
             end
@@ -151,7 +152,7 @@ module switch(
                 valido_n[address_t[1]] = valid_n[1];
                 dout[address_t[1]] = din[1];
             end
-            else if (frame_nt[1]) begin 
+            else if (frameo_n[address_t[1]] & wait_n[1]) begin 
                 valido_n[address_t[1]] = 16'hx;
                 dout[address_t[1]] = 16'hx;
             end
@@ -159,7 +160,7 @@ module switch(
                 valido_n[address_t[2]] = valid_n[2];
                 dout[address_t[2]] = din[2];
             end
-            else if (frame_nt[2]) begin 
+            else if (frameo_n[address_t[2]] & wait_n[2]) begin 
                 valido_n[address_t[2]] = 16'hx;
                 dout[address_t[2]] = 16'hx;
             end
@@ -167,7 +168,7 @@ module switch(
                 valido_n[address_t[3]] = valid_n[3];
                 dout[address_t[3]] = din[3];
             end
-            else if (frame_nt[3]) begin 
+            else if (frameo_n[address_t[3]] & wait_n[3]) begin 
                 valido_n[address_t[3]] = 16'hx;
                 dout[address_t[3]] = 16'hx;
             end
@@ -175,7 +176,7 @@ module switch(
                 valido_n[address_t[4]] = valid_n[4];
                 dout[address_t[4]] = din[4];
             end
-            else if (frame_nt[4]) begin 
+            else if (frameo_n[address_t[4]] & wait_n[4]) begin 
                 valido_n[address_t[4]] = 16'hx;
                 dout[address_t[4]] = 16'hx;
             end
@@ -183,7 +184,7 @@ module switch(
                 valido_n[address_t[5]] = valid_n[5];
                 dout[address_t[5]] = din[5];
             end
-            else if (frame_nt[5]) begin 
+            else if (frameo_n[address_t[5]] & wait_n[5]) begin 
                 valido_n[address_t[5]] = 16'hx;
                 dout[address_t[5]] = 16'hx;
             end
@@ -191,7 +192,7 @@ module switch(
                 valido_n[address_t[6]] = valid_n[6];
                 dout[address_t[6]] = din[6];
             end
-            else if (frame_nt[6]) begin 
+            else if (frameo_n[address_t[6]] & wait_n[6]) begin 
                 valido_n[address_t[6]] = 16'hx;
                 dout[address_t[6]] = 16'hx;
             end
@@ -199,7 +200,7 @@ module switch(
                 valido_n[address_t[7]] = valid_n[7];
                 dout[address_t[7]] = din[7];
             end
-            else if (frame_nt[7]) begin 
+            else if (frameo_n[address_t[7]] & wait_n[7]) begin 
                 valido_n[address_t[7]] = 16'hx;
                 dout[address_t[7]] = 16'hx;
             end
@@ -207,7 +208,7 @@ module switch(
                 valido_n[address_t[8]] = valid_n[8];
                 dout[address_t[8]] = din[8];
             end
-            else if (frame_nt[8]) begin 
+            else if (frameo_n[address_t[8]] & wait_n[8]) begin 
                 valido_n[address_t[8]] = 16'hx;
                 dout[address_t[8]] = 16'hx;
             end
@@ -215,7 +216,7 @@ module switch(
                 valido_n[address_t[9]] = valid_n[9];
                 dout[address_t[9]] = din[9];
             end
-            else if (frame_nt[9]) begin 
+            else if (frameo_n[address_t[9]] & wait_n[9]) begin 
                 valido_n[address_t[9]] = 16'hx;
                 dout[address_t[9]] = 16'hx;
             end
@@ -223,7 +224,7 @@ module switch(
                 valido_n[address_t[10]] = valid_n[10];
                 dout[address_t[10]] = din[10];
             end
-            else if (frame_nt[10]) begin 
+            else if (frameo_n[address_t[10]] & wait_n[10]) begin 
                 valido_n[address_t[10]] = 16'hx;
                 dout[address_t[10]] = 16'hx;
             end
@@ -231,7 +232,7 @@ module switch(
                 valido_n[address_t[11]] = valid_n[11];
                 dout[address_t[11]] = din[11];
             end
-            else if (frame_nt[11]) begin 
+            else if (frameo_n[address_t[11]] & wait_n[11]) begin 
                 valido_n[address_t[11]] = 16'hx;
                 dout[address_t[11]] = 16'hx;
             end
@@ -239,7 +240,7 @@ module switch(
                 valido_n[address_t[12]] = valid_n[12];
                 dout[address_t[12]] = din[12];
             end
-            else  if (frame_nt[12])begin 
+            else if (frameo_n[address_t[12]] & wait_n[12])begin 
                 valido_n[address_t[12]] = 16'hx;
                 dout[address_t[12]] = 16'hx;
             end
@@ -247,7 +248,7 @@ module switch(
                 valido_n[address_t[13]] = valid_n[13];
                 dout[address_t[13]] = din[13];
             end
-            else if (frame_nt[13]) begin 
+            else if (frameo_n[address_t[13]] & wait_n[13]) begin 
                 valido_n[address_t[13]] = 16'hx;
                 dout[address_t[13]] = 16'hx;
             end
@@ -255,7 +256,7 @@ module switch(
                 valido_n[address_t[14]] = valid_n[14];
                 dout[address_t[14]] = din[14];
             end
-            else if (frame_nt[14]) begin 
+            else if (frameo_n[address_t[14]] & wait_n[14]) begin 
                 valido_n[address_t[14]] = 16'hx;
                 dout[address_t[14]] = 16'hx;
             end
@@ -263,7 +264,7 @@ module switch(
                 valido_n[address_t[15]] = valid_n[15];
                 dout[address_t[15]] = din[15];
             end
-            else if (frame_nt[15]) begin 
+            else if (frameo_n[address_t[15]] & wait_n[15]) begin 
                 valido_n[address_t[15]] = 16'hx;
                 dout[address_t[15]] = 16'hx;
             end

@@ -36,7 +36,7 @@ module router(
         .wait_n(busy_n)
     ); 
     switch switch (
-        .din(din), .valid_n(valid_n), .frame_n(frame_n), .wait_n(busy_n),
+        .din(din), .valid_n(valid_n), .frame_n(frame_n), .wait_n(busy_n), .frameo_n(frameo_n),
         .reset_n(reset_n), .clk(clk), 
         .dout(dout), .valido_n(valido_n), 
         .address(address),

@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="90.467 ns"></ZoomStartTime>
-      <ZoomEndTime time="207.668 ns"></ZoomEndTime>
-      <Cursor1Time time="118.867 ns"></Cursor1Time>
+      <ZoomStartTime time="18.700 ns"></ZoomStartTime>
+      <ZoomEndTime time="278.501 ns"></ZoomEndTime>
+      <Cursor1Time time="74.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="168"></NameColumnWidth>
-      <ValueColumnWidth column_width="74"></ValueColumnWidth>
+      <NameColumnWidth column_width="165"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="19" />
    <wave_markers>
       <marker time="150000" label="" />
       <marker time="132000" label="" />
@@ -48,6 +48,7 @@
    <wvobject fp_name="/router_test_top/dut/arbiter/frame_n" type="array">
       <obj_property name="ElementShortName">frame_n[15:0]</obj_property>
       <obj_property name="ObjectShortName">frame_n[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/router_test_top/dut/arbiter/reset_n" type="logic">
       <obj_property name="ElementShortName">reset_n</obj_property>
@@ -105,6 +106,11 @@
    <wvobject fp_name="/router_test_top/dut/switch/frame_nt" type="array">
       <obj_property name="ElementShortName">frame_nt[15:0]</obj_property>
       <obj_property name="ObjectShortName">frame_nt[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/router_test_top/dut/switch/frameo_nt" type="array">
+      <obj_property name="ElementShortName">frameo_nt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">frameo_nt[15:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
