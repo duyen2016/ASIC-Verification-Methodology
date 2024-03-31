@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-interface router_io(input bit clk);
+interface router_io(input bit SystemClock);
     logic reset_n;
     logic [15:0] din;
     logic [15:0] frame_n;
@@ -29,7 +29,7 @@ interface router_io(input bit clk);
     logic [15:0] busy_n;
     logic [15:0] valido_n;
     logic [15:0] frameo_n;
-    clocking cb @(posedge clk);
+    clocking cb @(posedge SystemClock);
         default input #1ns output #1ns;
         output reset_n;
         output din;
@@ -40,5 +40,5 @@ interface router_io(input bit clk);
         input valido_n;
         input frameo_n;
     endclocking
-    modport TB(clocking cb, output reset_n, input clk);
+    modport TB(clocking cb, output reset_n, input SystemClock);
 endinterface

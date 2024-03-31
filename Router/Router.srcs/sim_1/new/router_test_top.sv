@@ -22,7 +22,7 @@
 
 module router_test_top();
 
-    //parameter simulation_cycle =
+    parameter simulation_cycle = 100;
     bit SystemClock;
     router_io top_io(SystemClock);
     test router_test(top_io.TB);
@@ -31,8 +31,15 @@ module router_test_top();
                 .frame_n(top_io.frame_n), 
                 .busy_n(top_io.busy_n),
                 .reset_n(top_io.reset_n), 
-                .clk(top_io.clk),
+                .clk(top_io.SystemClock),
                 .dout(top_io.dout), 
                 .valido_n(top_io.valido_n), 
                 .frameo_n(top_io.frameo_n)); 
+    initial begin
+        SystemClock = 0;
+        forever begin
+            #(simulation_cycle/2)
+            SystemClock = ~SystemClock;
+            end
+    end            
 endmodule
