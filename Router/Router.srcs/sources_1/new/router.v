@@ -31,7 +31,7 @@ module router(
         .address_t(address),
         .getheader_n(getheader_n),
         .frame_n(frame_n),
-        .frameo_n(frameo_n),
+        .frameo_nt(frameo_n),
         .reset_n(reset_n), .clk(clk),
         .wait_n(busy_n)
     ); 
