@@ -1,8 +1,8 @@
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/router_io.sv" into library xil_defaultlib
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv" into library xil_defaultlib
-WARNING: [VRFC 10-3824] variable 'counter' must explicitly be declared as automatic or static [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:129]
-WARNING: [VRFC 10-3824] variable 'temp' must explicitly be declared as automatic or static [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:164]
-WARNING: [VRFC 10-3824] variable 'getting' must explicitly be declared as automatic or static [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:165]
-WARNING: [VRFC 10-3824] variable 'acc' must explicitly be declared as automatic or static [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:190]
+WARNING: [VRFC 10-3824] variable 'counter' must explicitly be declared as automatic or static [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:127]
+WARNING: [VRFC 10-3824] variable 'temp' must explicitly be declared as automatic or static [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:161]
+WARNING: [VRFC 10-3824] variable 'getting' must explicitly be declared as automatic or static [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:162]
+WARNING: [VRFC 10-3824] variable 'acc' must explicitly be declared as automatic or static [E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/test.sv:184]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/CE409/ASIC-Verification-Methodology/Router/Router.srcs/sim_1/new/router_test_top.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module router_test_top

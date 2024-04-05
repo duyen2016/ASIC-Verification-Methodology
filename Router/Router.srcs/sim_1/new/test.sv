@@ -33,6 +33,7 @@ program automatic test (router_io.TB rtr_io);
         //#100 arbiter();
         gen();
         send();
+        self_check();
     end
     task reset();
         rtr_io.reset_n = 1'b0;
@@ -44,30 +45,30 @@ program automatic test (router_io.TB rtr_io);
         ##10 rtr_io.cb.reset_n <= 1'b1;
         repeat(15) @(rtr_io.cb);
     endtask
-    task routing();
-        repeat (15) begin
-            rtr_io.cb.din <= $urandom;
-            rtr_io.cb.valid_n <= ($urandom)|(~rtr_io.cb.busy_n);
-            rtr_io.cb.frame_n <= 16'hffef;
-            @(posedge rtr_io.SystemClock);
-        end
-        ##200 rtr_io.cb.frame_n <= 16'hffff;
-        ##100 rtr_io.cb.frame_n <= 16'h0000;
-        repeat (15) @(rtr_io.cb);
-        ##200 rtr_io.cb.frame_n <= 16'hffff;
-    endtask
-    task arbiter();
-        repeat (15) begin
-            rtr_io.cb.din <= $urandom;
-            rtr_io.cb.valid_n <= ($urandom)|(~rtr_io.cb.busy_n);
-            rtr_io.cb.frame_n <= 16'h0000;
-            @(posedge rtr_io.SystemClock);
-        end
-        rtr_io.cb.frame_n <= $urandom;
-        ##100 rtr_io.cb.frame_n <= 16'h0000;
-        repeat (15) @(rtr_io.cb);
-        ##100 rtr_io.cb.frame_n <= 16'hffff;
-    endtask
+//    task routing();
+//        repeat (15) begin
+//            rtr_io.cb.din <= $urandom;
+//            rtr_io.cb.valid_n <= ($urandom)|(~rtr_io.cb.busy_n);
+//            rtr_io.cb.frame_n <= 16'hffef;
+//            @(posedge rtr_io.SystemClock);
+//        end
+//        ##200 rtr_io.cb.frame_n <= 16'hffff;
+//        ##100 rtr_io.cb.frame_n <= 16'h0000;
+//        repeat (15) @(rtr_io.cb);
+//        ##200 rtr_io.cb.frame_n <= 16'hffff;
+//    endtask
+//    task arbiter();
+//        repeat (15) begin
+//            rtr_io.cb.din <= $urandom;
+//            rtr_io.cb.valid_n <= ($urandom)|(~rtr_io.cb.busy_n);
+//            rtr_io.cb.frame_n <= 16'h0000;
+//            @(posedge rtr_io.SystemClock);
+//        end
+//        rtr_io.cb.frame_n <= $urandom;
+//        ##100 rtr_io.cb.frame_n <= 16'h0000;
+//        repeat (15) @(rtr_io.cb);
+//        ##100 rtr_io.cb.frame_n <= 16'hffff;
+//    endtask
     
     task gen();
         payload.delete();
@@ -80,7 +81,6 @@ program automatic test (router_io.TB rtr_io);
     task send();
         begin
             sendaddress();
-            $display("%p",da);
             fork
                 sendpadding();
                 sendpayload();
@@ -88,7 +88,6 @@ program automatic test (router_io.TB rtr_io);
                 #7000;
             join_any
             disable fork;
-            self_check();
         end
     endtask
     
@@ -117,7 +116,6 @@ program automatic test (router_io.TB rtr_io);
                 if (last_bit[x] === 1) valid_n[x] = 0;
                 //valid_n[i] = (rtr_io.cb.frameo_n[da[i]] === 1'b1)? 1
                 //$display("%p", da[i]);
-                $display("%b", last_bit);
                 last_bit[x] = 0;
             end
             @(rtr_io.cb);
@@ -131,7 +129,6 @@ program automatic test (router_io.TB rtr_io);
         while (1) begin
             last_bit = 0;
             foreach (payload[i]) begin           
-                $display("%b, %d", local_payload[i], i);
                 if (counter[i] < 7 ) begin
                     if (~valid_n[i])
                         begin
@@ -171,15 +168,12 @@ program automatic test (router_io.TB rtr_io);
                         payload_out[i].push_back(temp[i]);
                         temp[i] = 0;
                         getting[i] = 0;
-                        $display("push");
-                        $display("%t, dout %d, %b , %h",$time, i, rtr_io.cb.dout[i], temp[i]);
                     end
                     else continue;
                     end
                 else if ((rtr_io.cb.valido_n[i] === 0) && (rtr_io.cb.frameo_n[i] === 0)) begin
                     temp[i] = {rtr_io.cb.dout[i],temp[i][7:1]};
                     getting[i] = 1;
-                    $display("%t, dout %d, %b, %h ",$time, i, rtr_io.cb.dout[i], temp[i]);
                 end
                 
             end

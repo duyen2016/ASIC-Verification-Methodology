@@ -35,7 +35,7 @@ module arbiter(
     always @(posedge clk) begin
         frameo_n <= frameo_nt;
     end
-    always @(posedge clk) begin
+    always @(*) begin
         if (!reset_n) begin
             wait_n = 16'hffff;
             frameo_nt = 16'hffff;
