@@ -37,9 +37,6 @@ class packet;
     task display();
         $display("payload: %h", payload);
         $display("da: %h", da);
-        $display("valid: %b", valid);
-        $display("frame: %b", frame);
-        $display("last_bit: %b", last_bit);
     endtask: display
 endclass: packet
 
@@ -92,7 +89,7 @@ class driver;
     task sendpayload(int i, virtual router_io rtr_io);
         int counter = 0;
         this.payload = pkt.payload;
-        while (counter <= 8) begin
+        while (counter <= 7) begin
             pkt.last_bit = 0;   
             pkt.valid = 1'b0;
             rtr_io.valid_n[i] = pkt.valid;
@@ -103,47 +100,35 @@ class driver;
                         rtr_io.din[i] = this.payload[0];
                         this.payload = this.payload>>1; 
                         counter = counter + 1;
-                        //if ((local_payload[i] == 8'h01) || (local_payload[i] == 8'h00)) last_bit[i] = 1;   
                     end
                 else rtr_io.din[i] = 1'bx;
                 end
-            else begin
+            else if (counter == 7)begin
                 pkt.last_bit = 1;
                 pkt.frame = 1'b1;
                 rtr_io.din[i] = this.payload[0];
                 this.payload = 8'bxx;    
                 counter = counter + 1;
+
             end
             rtr_io.frame_n[i] = pkt.frame;
             @(posedge rtr_io.SystemClock);
         end
-    endtask
+        pkt.valid = 1'b1;
+        rtr_io.valid_n[i] = pkt.valid;
+    endtask: sendpayload
     task reset(virtual router_io rtr_io);
         rtr_io.reset_n = 1'b0;
-        rtr_io.din <= $random;
-        rtr_io.frame_n <= 16'hffff;
-        rtr_io.valid_n <= 16'hffff;
+        rtr_io.din = $random;
+        rtr_io.frame_n = 16'hffff;
+        rtr_io.valid_n = 16'hffff;
         @(posedge rtr_io.SystemClock)
         rtr_io.reset_n = 1'b1;
         repeat(15) @(posedge rtr_io.SystemClock);
     endtask: reset
 endclass: driver
 class monitor;
-//    packet pktout[16];
     logic [7:0] payload_out[16][$];
-    //static virtual router_io.TB rtr_io;
-//    function new();
-//        foreach (pktout[i])
-//            pktout[i] = new();
-//    endfunction:new
-//    task setrtrio(virtual router_io rtr_io);
-//        foreach (pktout[i]) begin
-//            pktout[i].d = rtr_io.dout[i];
-//            pktout[i].busy_n = rtr_io.busy_n[i];
-//            pktout[i].valid = rtr_io.valido_n[i];
-//            pktout[i].frame = rtr_io.frameo_n[i];
-//        end
-//    endtask: setrtrio
     task getpayload(virtual router_io rtr_io);
         logic [7:0] temp[15:0] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0, 0, 0};
         logic [15:0] getting = 0;
@@ -250,6 +235,7 @@ program automatic testwithclass(
         foreach (g[i]) g[i] = new();
         drv.reset(rtr_io);
         foreach(g[i]) begin
+            $display("%d", i);
             g[i].gen_plda();
             check.trst.drv[i].setpacket(g[i].pkt);
         end
