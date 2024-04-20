@@ -25,7 +25,7 @@ module router_test_top();
     parameter simulation_cycle = 100;
     bit SystemClock;
     router_io top_io(SystemClock);
-    test router_test(top_io.TB);
+    testwithclass router_test(top_io);
     router dut(.din(top_io.din), 
                 .valid_n(top_io.valid_n), 
                 .frame_n(top_io.frame_n), 

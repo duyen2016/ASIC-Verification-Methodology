@@ -40,5 +40,17 @@ interface router_io(input bit SystemClock);
         input valido_n;
         input frameo_n;
     endclocking
+    clocking cb_dut @(posedge SystemClock);
+        default input #1ns output #1ns;
+        input reset_n;
+        input din;
+        input frame_n;
+        input valid_n;
+        output dout;
+        output busy_n;
+        output valido_n;
+        output frameo_n;
+    endclocking
     modport TB(clocking cb, output reset_n, input SystemClock);
+    modport dut(clocking cb_dut, input reset_n, input SystemClock);
 endinterface
