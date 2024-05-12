@@ -1,0 +1,24 @@
+0.7
+2020.2
+Oct 19 2021
+03:16:22
+E:/CE409/ASIC-Verification-Methodology/RISC-V/ALU.v,1715361499,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/branchcomp.v,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/parameter.vh,alu,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/Controler.v,1715358593,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/Dmem.v,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/parameter.vh,controller,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/Dmem.v,1715413717,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/EX_MA.v,,dmem,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/Imem.v,1715268942,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/ImmGen.v,,imem,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/ImmGen.v,1714489031,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/MA_WB.v,,immgen,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/Prsor.v,1715452344,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/forwarding.v,,processor,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.sim/sim_1/behav/xsim/glbl.v,1634335545,verilog,,,,glbl,,,,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/EX_MA.v,1715524488,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/ID_EX.v,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/parameter.vh,EX_MA,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/ID_EX.v,1715448251,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/IF_ID.v,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/parameter.vh,ID_EX,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/IF_ID.v,1715450206,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/Imem.v,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/parameter.vh,IF_ID,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/MA_WB.v,1715417845,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/Prsor.v,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/parameter.vh,MA_WB,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/branchcomp.v,1714809381,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/Dmem.v,,branchcomp,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/forwarding.v,1715433686,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/mux.v,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/parameter.vh,forwarding,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/mux3.v,1715268647,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/mux4.v,,mux3,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/mux4.v,1715430920,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/reg_file.v,,mux4,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/parameter.vh,1714809496,verilog,,,,,,,,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/stall.v,1715451332,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/procs_tb.v,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/parameter.vh,stall,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/mux.v,1700451031,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/mux3.v,,mux,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/procs_tb.v,1715438305,verilog,,,,processor_testbench,,,../../../../RISC-V.srcs/sources_1/new,,,,,
+E:/CE409/ASIC-Verification-Methodology/RISC-V/reg_file.v,1715434879,verilog,,E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sources_1/new/stall.v,,regfile,,,../../../../RISC-V.srcs/sources_1/new,,,,,

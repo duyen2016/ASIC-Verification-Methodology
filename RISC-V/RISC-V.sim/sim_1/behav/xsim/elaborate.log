@@ -1,0 +1,10 @@
+Vivado Simulator v2021.2
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: E:/Program/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot processor_testbench_behav xil_defaultlib.processor_testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'type_WB' [E:/CE409/ASIC-Verification-Methodology/RISC-V/Prsor.v:61]
+WARNING: [VRFC 10-526] concatenation with unsized literal; will interpret as 32 bits [E:/CE409/ASIC-Verification-Methodology/RISC-V/Dmem.v:35]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

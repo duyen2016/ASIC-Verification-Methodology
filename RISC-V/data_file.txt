@@ -1,0 +1,9 @@
+lui x8, 0x12345
+addi x8, x8, 0x678
+lui x4, 0x87654
+addi x4, x4, 0x321
+add x1, x8, x4
+lui x2, 0x0
+addi x2, x2, 0x0
+sw x1, 0, x2
+lw x3, 0, x2

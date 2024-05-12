@@ -1,0 +1,83 @@
+Time resolution is 1 ps
+          0
+This packet generated with values: 
+payload: d7
+da: 8
+          1
+This packet generated with values: 
+payload: db
+da: 7
+          2
+This packet generated with values: 
+payload: 88
+da: 5
+          3
+This packet generated with values: 
+payload: ba
+da: 0
+          4
+This packet generated with values: 
+payload: 5f
+da: 5
+          5
+This packet generated with values: 
+payload: 4c
+da: e
+          6
+This packet generated with values: 
+payload: a1
+da: b
+          7
+This packet generated with values: 
+payload: aa
+da: 9
+          8
+This packet generated with values: 
+payload: 6a
+da: a
+          9
+This packet generated with values: 
+payload: 66
+da: c
+         10
+This packet generated with values: 
+payload: fd
+da: f
+         11
+This packet generated with values: 
+payload: 3d
+da: b
+         12
+This packet generated with values: 
+payload: cf
+da: 1
+         13
+This packet generated with values: 
+payload: c3
+da: 9
+         14
+This packet generated with values: 
+payload: 6f
+da: 7
+         15
+This packet generated with values: 
+payload: 99
+da: 7
+PASS: Got packet, packet in 215, packet out         215!
+PASS: Got packet, packet in 219, packet out         219!
+PASS: Got packet, packet in 136, packet out         136!
+PASS: Got packet, packet in 186, packet out         186!
+PASS: Got packet, packet in  95, packet out          95!
+PASS: Got packet, packet in  76, packet out          76!
+PASS: Got packet, packet in 161, packet out         161!
+PASS: Got packet, packet in 170, packet out         170!
+PASS: Got packet, packet in 106, packet out         106!
+PASS: Got packet, packet in 102, packet out         102!
+PASS: Got packet, packet in 253, packet out         253!
+PASS: Got packet, packet in  61, packet out          61!
+PASS: Got packet, packet in 207, packet out         207!
+PASS: Got packet, packet in 195, packet out         195!
+PASS: Got packet, packet in 111, packet out         111!
+PASS: Got packet, packet in 153, packet out         153!
+Score:          16
+$finish called at time : 4850 ns : File "E:/CE409/ASIC-Verification-Methodology/routerwithoop/routerwithoop.srcs/sources_1/new/testwithclass.sv" Line 234
