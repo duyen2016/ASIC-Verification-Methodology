@@ -1,0 +1,84 @@
+lui x2, 0x123
+addi x2, x2, 0x456
+lui x1, 0x0
+addi x1, x1, 0x5 
+sb x1, 0, x2 #luu vao o nho 123456 gia tri 5 
+lb x15, 0, x2
+lbu x15, 0, x2
+addi x2, x2, 0x1 #tro vao o nho 123457
+addi x1, x1, 0xffe #x1 = 3
+sb x1, 0, x2 #luu 3 vao 123457
+lb x15, 0, x2
+addi x2, x2, 0x1 #123458
+addi x1, x1, 0x600 #x1 = 63
+sh x1, 0, x2 #luu 6 3 vao 123458, 123459
+lh x15, 0, x2
+lhu x15, 0, x2
+addi x2, x2, 0x2 # tro toi 123460
+lui x1, 0x08090
+addi x1, x1, 0x602 #x0 = 8962
+sw x1, 0, x2 #luu 8 9 6 2
+lw x15, 0, x2
+
+bgeu x0, x15, exit #0x0cf07263
+
+addi x2, x2, 0xffc #123456 dia chi mang 
+lui x3, 0x0
+addi x3, x3, 0x8 #size = 8
+lui x4, 0x0 #i = 0
+addi x5, x3, -1 #size-1
+addi x6, x2, 0x0 # dia chi mang
+
+for1: #0x64
+lui x0, 0x0
+slti x7, x4, 0x7
+bne x7, x0, here #0x00039463
+bge x3, x0, endfor1 #0x0601d263
+here:
+addi x7, x4, 0x0 #minindex = i
+addi x8, x4, 0x1 #j = i + 1
+addi x9, x2, 0x1 #contro
+for2:
+slt x10, x8, x3
+beq x10, x0, endfor2 #0x02050463
+lb x10, 0, x9 # x10 = a[j]
+if:
+add x11, x6, x7 #x11 = dia chi phan tu a[mainlined]
+lb x12, 0x0, x11 # x12 = a[minindex]
+blt x10, x12, here1 #0x00c54463
+bltu x0, x3, endif
+here1:
+add x7, x8, x0 # min_index = j
+endif:
+addi x9, x9, 1
+addi x8, x8, 1
+jal x15, for2 #0xfd9ff7ef
+endfor2:
+add x11, x6, x7 # dia chi phan tu a[min_index]
+lb x14, 0, x11 # array[min_index]
+lb x12, 0, x2 # array[i]
+sb x14, 0, x2 # array[i] = array[min_index]
+sb x12, 0, x11 # array[min_index] = array[i]
+addi x2, x2, 1 #con tro++
+addi x4, x4, 1
+auipc x15, 0x0
+addi x15, x15, 0x8
+jalr x15, x15, for1
+endfor1:
+xori x15, x2, 0x5
+ori x15, x3, 0x12
+andi x15, x5, 0x19
+slli x4, x4, 0x30 	
+srli x15, x1, 0x8
+srai x11, x4, 0x10
+sll x15, x15, x3
+sltu x15, x11, x12
+xor x15, x11, x12
+srl x15, x1, x0
+sra x15, x11, x14
+or x15, x15, x3
+and x15, x11, x1
+sltiu x15, x15, 0x9
+
+exit:
+exit:
