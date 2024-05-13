@@ -23,7 +23,7 @@
 module MA_WB(
     input [31:0] ALU_res_MA, PCadd4_MA, mem_MA, inst_MA,
     input [2:0] type_MA,
-    input BrEq_MA, BrLT_MA, clk,
+    input BrEq_MA, BrLT_MA, clk, rst,
     output reg [2:0] type_WB,
     output reg [31:0] ALU_res_WB, PCadd4_WB, mem_WB, inst_WB,
     output reg BrEq_WB, BrLT_WB,
@@ -36,13 +36,24 @@ module MA_WB(
     wire [2:0] funct3;
     assign AddrD = inst_WB[11:7];
     always @(posedge clk) begin
-        ALU_res_WB <= ALU_res_MA;
-        PCadd4_WB <= PCadd4_MA;
-        mem_WB <= mem_MA;
-        inst_WB <= inst_MA;
-        BrEq_WB <= BrEq_MA;
-        BrLT_WB <= BrLT_MA;
-        type_WB <= type_MA;
+        if (rst) begin
+            ALU_res_WB <= 0;
+            PCadd4_WB <= 0;
+            mem_WB <= 0;
+            inst_WB <= 0;
+            BrEq_WB <= 0;
+            BrLT_WB <= 0;
+            type_WB <= 0;
+        end
+        else begin
+            ALU_res_WB <= ALU_res_MA;
+            PCadd4_WB <= PCadd4_MA;
+            mem_WB <= mem_MA;
+            inst_WB <= inst_MA;
+            BrEq_WB <= BrEq_MA;
+            BrLT_WB <= BrLT_MA;
+            type_WB <= type_MA;
+        end
     end
     assign funct3 = inst_WB[14:12];
     assign opcode = inst_WB[6:0];

@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-module dmem(clk, Address, WriteData, ReadData, MemRW, funct3);
-    input clk;
+module dmem(clk, rst, Address, WriteData, ReadData, MemRW, funct3);
+    input clk, rst;
     input [31:0]Address, WriteData;
     input MemRW;
     input [2:0] funct3;
@@ -26,13 +26,13 @@ module dmem(clk, Address, WriteData, ReadData, MemRW, funct3);
         end
     end
   
-    always @(Address, dmem_cell, MemRW, funct3) begin
+    always @(Address or dmem_cell[Address] or MemRW or funct3) begin
         if (MemRW) begin
             case (funct3)
                 3'b001: begin 
                     ReadData[7:0] = dmem_cell[Address];
                     ReadData[15:8] = dmem_cell[Address+1];
-                    ReadData[31:16] = {16,{dmem_cell[Address+1][7]}};
+                    ReadData[31:16] = {16{dmem_cell[Address+1][7]}};
                     end
                 3'b010: ReadData = {dmem_cell[Address+3], dmem_cell[Address+2], dmem_cell[Address+1], dmem_cell[Address]};
                 3'b100: ReadData = {{24'b0}, dmem_cell[Address]};

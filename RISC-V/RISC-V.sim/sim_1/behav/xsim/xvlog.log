@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sim_1/new/test.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sim_1/new/yourcpu_io.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sim_1/new/yourcpu_test_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module yourcpu_test_top

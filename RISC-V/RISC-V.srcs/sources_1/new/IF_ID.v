@@ -21,7 +21,7 @@
 
 
 module IF_ID(
-    input clk, stall,
+    input clk, stall, rst,
     input [31:0] inst_IF, PC_IF, PCadd4_IF,
     output [4:0]i1, i2, 
     output [24:0] i3,
@@ -39,16 +39,16 @@ module IF_ID(
     wire [31:0] next_inst;
     assign next_inst = (stall)? 32'h00008093: inst_IF;
     always @(posedge clk) begin
-//        if (stall & clk) begin
-//            inst_ID <= 32'h00008093;       
-//            PC_ID <=  PC_ID;
-//            PCadd4_ID <= PCadd4_ID;            
-//        end
-//        else begin
+        if (rst) begin
+            inst_ID <= 32'h0;       
+            PC_ID <=  -4;
+            PCadd4_ID <= 0;            
+        end
+        else begin
             inst_ID <= next_inst;
             PC_ID <= PC_IF;
             PCadd4_ID <= PCadd4_IF;         
-//        end
+        end
     end
     function [2:0] getImmSel(input [2:0] type);
         begin

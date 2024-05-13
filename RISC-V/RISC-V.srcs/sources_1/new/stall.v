@@ -30,7 +30,7 @@ module stall(
     wire [2:0]funct3;
     assign funct3 = inst[14:12];
     assign stall = getPCsel(type, funct3, BrEq, BrLT);
-        function getPCsel(input [2:0] type, input [2:0] funct3, input BrEq, input BrLT);
+    function getPCsel(input [2:0] type, input [2:0] funct3, input BrEq, input BrLT);
         begin
             case (type)
                 J_Type: getPCsel = 1'b1;

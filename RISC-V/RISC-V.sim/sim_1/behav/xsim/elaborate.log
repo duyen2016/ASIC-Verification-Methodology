@@ -1,10 +1,37 @@
 Vivado Simulator v2021.2
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: E:/Program/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot processor_testbench_behav xil_defaultlib.processor_testbench xil_defaultlib.glbl -log elaborate.log 
+Running: E:/Program/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot yourcpu_test_top_behav xil_defaultlib.yourcpu_test_top xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'type_WB' [E:/CE409/ASIC-Verification-Methodology/RISC-V/Prsor.v:61]
-WARNING: [VRFC 10-526] concatenation with unsized literal; will interpret as 32 bits [E:/CE409/ASIC-Verification-Methodology/RISC-V/Dmem.v:35]
+WARNING: [VRFC 10-3597] non-void function 'gen' called as a task without void casting [E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sim_1/new/test.sv:516]
+WARNING: [VRFC 10-3245] cycle delay operator requires a default clocking to be specified [E:/CE409/ASIC-Verification-Methodology/RISC-V/RISC-V.srcs/sim_1/new/test.sv:600]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-3980] File "E:/CE409/ASIC-Verification-Methodology/RISC-V/Imem.v" Line 15 : The SystemVerilog feature ": Sensitivity on Associative Array" is not supported yet for simulation.
+WARNING: [XSIM 43-3980] File "E:/CE409/ASIC-Verification-Methodology/RISC-V/Dmem.v" Line 29 : The SystemVerilog feature ": Sensitivity on Associative Array" is not supported yet for simulation.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_test_sv
+Compiling module xil_defaultlib.cb
+Compiling module xil_defaultlib.yourcpu_io
+Compiling module xil_defaultlib.test
+Compiling module xil_defaultlib.mux
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.IF_ID
+Compiling module xil_defaultlib.immgen
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.ID_EX
+Compiling module xil_defaultlib.forwarding
+Compiling module xil_defaultlib.mux4
+Compiling module xil_defaultlib.branchcomp
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.stall
+Compiling module xil_defaultlib.EX_MA
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MA_WB
+Compiling module xil_defaultlib.mux3
+Compiling module xil_defaultlib.processor
+Compiling module xil_defaultlib.yourcpu_test_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot yourcpu_test_top_behav

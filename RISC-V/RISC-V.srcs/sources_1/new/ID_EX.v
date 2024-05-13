@@ -21,7 +21,7 @@
 
 
 module ID_EX(
-    input clk, stall, 
+    input clk, stall, rst,
     input [31:0] PC_ID, PCadd4_ID, DA_ID, DB_ID, imm_ID, inst_ID,
     input [2:0] type_ID,
     output reg [31:0] PC_EX, PCadd4_EX, DA_EX, DB_EX, imm_EX, inst_EX,
@@ -33,22 +33,22 @@ module ID_EX(
     wire [31:0] next_inst;
     assign next_inst = (stall)? 32'h00008093: inst_ID;
     always @(posedge clk) begin
-//        if (stall & clk) begin
-//            PC_EX <= PC_EX;
-//            PCadd4_EX <= PCadd4_EX;
-//            DA_EX <= 32'b0;
-//            DB_EX <= 32'b0;
-//            imm_EX <= 32'b0;
-//            inst_EX <= 32'h00008093;
-//        end
-//        else begin
+        if (rst) begin
+            PC_EX <= -4;
+            PCadd4_EX <= 0;
+            DA_EX <= 32'b0;
+            DB_EX <= 32'b0;
+            imm_EX <= 32'b0;
+            inst_EX <= 32'h0;
+        end
+        else begin
             PC_EX <= PC_ID;
             PCadd4_EX <= PCadd4_ID;
             DA_EX <= DA_ID;
             DB_EX <= DB_ID;
             imm_EX <= imm_ID;
             inst_EX <= next_inst;
-//        end
+        end
         end
     
     wire [2:0] funct3;

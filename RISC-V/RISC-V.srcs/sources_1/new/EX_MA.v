@@ -23,7 +23,7 @@
 module EX_MA(
     input [31:0] ALU_res_EX, DB_EX, PCadd4_EX,  inst_EX,
     input [2:0] type_EX,
-    input BrEq_EX, BrLT_EX, clk, stall,
+    input BrEq_EX, BrLT_EX, clk, rst,
     output [2:0] type_MA,
     output reg [31:0] ALU_res_MA, DB_MA, PCadd4_MA, inst_MA,
     output MemRW, PCSel,
@@ -36,13 +36,22 @@ module EX_MA(
 //    assign next_inst = (stall)? 32'h00008093: inst_EX;
     always @(posedge clk) begin
 //        if (!PCSel) begin
+        if (rst) begin
+            ALU_res_MA <= 0;
+            DB_MA <= 0;
+            PCadd4_MA <= 0;
+            BrEq_MA <= 0;
+            BrLT_MA <= 0; 
+            inst_MA <= 0;
+        end
+        else begin
             ALU_res_MA <= ALU_res_EX;
             DB_MA <= DB_EX;
             PCadd4_MA <= PCadd4_EX;
             BrEq_MA <= BrEq_EX;
             BrLT_MA <= BrLT_EX; 
             inst_MA <= inst_EX;
-//        end
+        end
 //        else begin
 //            type_MA <= type_MA;
 //            ALU_res_MA <= 32'b0;

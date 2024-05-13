@@ -16,7 +16,11 @@ verilog xil_defaultlib  --include "../../../../RISC-V.srcs/sources_1/new" \
 "../../../../RISC-V.srcs/sources_1/new/mux4.v" \
 "../../../../reg_file.v" \
 "../../../../RISC-V.srcs/sources_1/new/stall.v" \
-"../../../../procs_tb.v" \
+
+sv xil_defaultlib  --include "../../../../RISC-V.srcs/sources_1/new" \
+"../../../../RISC-V.srcs/sim_1/new/test.sv" \
+"../../../../RISC-V.srcs/sim_1/new/yourcpu_io.sv" \
+"../../../../RISC-V.srcs/sim_1/new/yourcpu_test_top.sv" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
