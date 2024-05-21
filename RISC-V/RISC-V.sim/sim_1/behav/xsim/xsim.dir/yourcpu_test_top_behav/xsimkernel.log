@@ -2,3 +2,6 @@ Running: xsim.dir/yourcpu_test_top_behav/xsimk.exe -simmode gui -wdb yourcpu_tes
 Design successfully loaded
 Design Loading Memory Usage: 8800 KB (Peak: 8800 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 12604 KB (Peak: 12604 KB)
+Simulation CPU Usage: 92 ms

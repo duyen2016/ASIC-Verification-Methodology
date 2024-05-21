@@ -1,83 +1,164 @@
 Time resolution is 1 ps
           0
 This packet generated with values: 
-payload: d7
+payload: e7
 da: 8
           1
 This packet generated with values: 
-payload: db
-da: 7
+payload: 93
+da: 8
           2
 This packet generated with values: 
-payload: 88
-da: 5
+payload: 4c
+da: 8
           3
 This packet generated with values: 
-payload: ba
-da: 0
+payload: 99
+da: 8
           4
 This packet generated with values: 
-payload: 5f
-da: 5
+payload: 28
+da: 8
           5
 This packet generated with values: 
-payload: 4c
-da: e
+payload: bf
+da: 8
           6
 This packet generated with values: 
-payload: a1
-da: b
+payload: 07
+da: 8
           7
 This packet generated with values: 
-payload: aa
-da: 9
+payload: 97
+da: 8
           8
 This packet generated with values: 
-payload: 6a
-da: a
+payload: 7b
+da: 8
           9
 This packet generated with values: 
-payload: 66
-da: c
+payload: 6e
+da: 8
          10
 This packet generated with values: 
-payload: fd
-da: f
+payload: 81
+da: 8
          11
 This packet generated with values: 
-payload: 3d
-da: b
+payload: 74
+da: 8
          12
 This packet generated with values: 
-payload: cf
-da: 1
+payload: dc
+da: 8
          13
 This packet generated with values: 
-payload: c3
-da: 9
+payload: 59
+da: 8
          14
 This packet generated with values: 
-payload: 6f
-da: 7
+payload: 68
+da: 8
          15
 This packet generated with values: 
-payload: 99
-da: 7
-PASS: Got packet, packet in 215, packet out         215!
-PASS: Got packet, packet in 219, packet out         219!
-PASS: Got packet, packet in 136, packet out         136!
-PASS: Got packet, packet in 186, packet out         186!
-PASS: Got packet, packet in  95, packet out          95!
+payload: 37
+da: 8
+PASS: Got packet, packet in 231, packet out         231!
+PASS: Got packet, packet in 147, packet out         147!
 PASS: Got packet, packet in  76, packet out          76!
-PASS: Got packet, packet in 161, packet out         161!
-PASS: Got packet, packet in 170, packet out         170!
-PASS: Got packet, packet in 106, packet out         106!
-PASS: Got packet, packet in 102, packet out         102!
-PASS: Got packet, packet in 253, packet out         253!
-PASS: Got packet, packet in  61, packet out          61!
-PASS: Got packet, packet in 207, packet out         207!
-PASS: Got packet, packet in 195, packet out         195!
-PASS: Got packet, packet in 111, packet out         111!
 PASS: Got packet, packet in 153, packet out         153!
+PASS: Got packet, packet in  40, packet out          40!
+PASS: Got packet, packet in 191, packet out         191!
+PASS: Got packet, packet in   7, packet out           7!
+PASS: Got packet, packet in 151, packet out         151!
+PASS: Got packet, packet in 123, packet out         123!
+PASS: Got packet, packet in 110, packet out         110!
+PASS: Got packet, packet in 129, packet out         129!
+PASS: Got packet, packet in 116, packet out         116!
+PASS: Got packet, packet in 220, packet out         220!
+PASS: Got packet, packet in  89, packet out          89!
+PASS: Got packet, packet in 104, packet out         104!
+PASS: Got packet, packet in  55, packet out          55!
 Score:          16
-$finish called at time : 4850 ns : File "E:/CE409/ASIC-Verification-Methodology/routerwithoop/routerwithoop.srcs/sources_1/new/testwithclass.sv" Line 234
+          0
+This packet generated with values: 
+payload: 70
+da: 1
+          1
+This packet generated with values: 
+payload: d1
+da: b
+          2
+This packet generated with values: 
+payload: 80
+da: b
+          3
+This packet generated with values: 
+payload: 15
+da: d
+          4
+This packet generated with values: 
+payload: 26
+da: 9
+          5
+This packet generated with values: 
+payload: 44
+da: 1
+          6
+This packet generated with values: 
+payload: 13
+da: 9
+          7
+This packet generated with values: 
+payload: e9
+da: a
+          8
+This packet generated with values: 
+payload: 4c
+da: 3
+          9
+This packet generated with values: 
+payload: 1f
+da: d
+         10
+This packet generated with values: 
+payload: 47
+da: b
+         11
+This packet generated with values: 
+payload: 1f
+da: 3
+         12
+This packet generated with values: 
+payload: c9
+da: 8
+         13
+This packet generated with values: 
+payload: cd
+da: 2
+         14
+This packet generated with values: 
+payload: 27
+da: c
+         15
+This packet generated with values: 
+payload: 95
+da: 1
+PASS: Got packet, packet in 112, packet out         112!
+PASS: Got packet, packet in 209, packet out         209!
+PASS: Got packet, packet in 128, packet out         128!
+PASS: Got packet, packet in  21, packet out          21!
+PASS: Got packet, packet in  38, packet out          38!
+PASS: Got packet, packet in  68, packet out          68!
+PASS: Got packet, packet in  19, packet out          19!
+PASS: Got packet, packet in 233, packet out         233!
+PASS: Got packet, packet in  76, packet out          76!
+PASS: Got packet, packet in  31, packet out          31!
+PASS: Got packet, packet in  71, packet out          71!
+PASS: Got packet, packet in  31, packet out          31!
+PASS: Got packet, packet in 201, packet out         201!
+PASS: Got packet, packet in 205, packet out         205!
+PASS: Got packet, packet in  39, packet out          39!
+PASS: Got packet, packet in 149, packet out         149!
+Score:          16
+$finish called at time : 21050 ns : File "E:/CE409/ASIC-Verification-Methodology/routerwithoop/routerwithoop.srcs/sources_1/new/testwithclass.sv" Line 242

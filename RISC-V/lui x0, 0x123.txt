@@ -2,7 +2,7 @@ lui x2, 0x123
 addi x2, x2, 0x456
 lui x1, 0x0
 addi x1, x1, 0x5 
-sb x1, 0, x2 #luu vao o nho 123456 gia tri 5 
+sb x1, 0, x2 #luu vat o nho 123456 gia tri 5 
 lb x15, 0, x2
 lbu x15, 0, x2
 addi x2, x2, 0x1 #tro vao o nho 123457
@@ -19,16 +19,13 @@ lui x1, 0x08090
 addi x1, x1, 0x602 #x0 = 8962
 sw x1, 0, x2 #luu 8 9 6 2
 lw x15, 0, x2
-
 bgeu x0, x15, exit #0x0cf07263
-
 addi x2, x2, 0xffc #123456 dia chi mang 
 lui x3, 0x0
 addi x3, x3, 0x8 #size = 8
 lui x4, 0x0 #i = 0
 addi x5, x3, -1 #size-1
 addi x6, x2, 0x0 # dia chi mang
-
 for1: #0x64
 lui x0, 0x0
 slti x7, x4, 0x7
@@ -79,6 +76,5 @@ sra x15, x11, x14
 or x15, x15, x3
 and x15, x11, x1
 sltiu x15, x15, 0x9
-
 exit:
 exit:

@@ -38,6 +38,9 @@ class packet;
         $display("payload: %h", payload);
         $display("da: %h", da);
     endtask: display
+    task setda(logic [3:0] address);
+        this.da = address;
+    endtask
 endclass: packet
 
 class gen;
@@ -51,6 +54,12 @@ class gen;
         $display("This packet generated with values: ");
         pkt.display();
     endtask:gen_plda
+    task gen_plda_fixed();
+        pkt = new();
+        pkt.randomize() with {da == 8;};
+        $display("This packet generated with values: ");
+        pkt.display();
+    endtask:gen_plda_fixed
 endclass: gen
 class driver;
     packet pkt;
@@ -77,7 +86,7 @@ class driver;
         end
         pkt.valid = 1'b1;
         rtr_io.valid_n[i] <= pkt.valid; 
-        repeat (2) @(posedge rtr_io.SystemClock);   
+//        @(posedge rtr_io.SystemClock);   
     endtask: sendaddress
     task sendpadding(int i, virtual router_io rtr_io);
         while (pkt.valid) begin
@@ -129,6 +138,9 @@ class driver;
 endclass: driver
 class monitor;
     logic [7:0] payload_out[16][$];
+    function new();
+        foreach(payload_out[i]) payload_out[i].delete();
+    endfunction
     task getpayload(virtual router_io rtr_io);
         logic [7:0] temp[15:0] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0, 0, 0};
         logic [15:0] getting = 0;
@@ -227,25 +239,51 @@ endclass:scoreboard
 program automatic testwithclass(
     router_io rtr_io
     );
-    driver drv = new();
-    gen g[16];
-    scoreboard check = new();
-    int score;
     initial begin
-        foreach (g[i]) g[i] = new();
-        drv.reset(rtr_io);
-        foreach(g[i]) begin
-            $display("%d", i);
-            g[i].gen_plda();
-            check.trst.drv[i].setpacket(g[i].pkt);
-        end
-        fork
-            check.trst.send(rtr_io);
-            check.trst.receive(rtr_io);
-        join_any 
-        score = check.check();
-        $display("Score: %d", score);
-    end
-        
+    case3();
+    case4();
     
+    end
+    task case3();
+        driver drv = new();
+        gen g[16];
+        scoreboard check = new();
+        int score;
+        begin
+            foreach (g[i]) g[i] = new();
+            drv.reset(rtr_io);
+            foreach(g[i]) begin
+                $display("%d", i);
+                g[i].gen_plda_fixed();
+                check.trst.drv[i].setpacket(g[i].pkt);
+            end
+            fork
+                check.trst.send(rtr_io);
+                check.trst.receive(rtr_io);
+            join_any 
+            score = check.check();
+            $display("Score: %d", score);
+        end     
+    endtask: case3
+    task case4();
+        driver drv = new();
+        gen g[16];
+        scoreboard check = new();
+        int score;
+        begin
+            foreach (g[i]) g[i] = new();
+            drv.reset(rtr_io);
+            foreach(g[i]) begin
+                $display("%d", i);
+                g[i].gen_plda();
+                check.trst.drv[i].setpacket(g[i].pkt);
+            end
+            fork
+                check.trst.send(rtr_io);
+                check.trst.receive(rtr_io);
+            join_any 
+            score = check.check();
+            $display("Score: %d", score);
+        end    
+    endtask: case4
 endprogram 

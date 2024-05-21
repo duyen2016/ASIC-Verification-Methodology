@@ -12,18 +12,20 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,513.066 ns"></ZoomStartTime>
-      <ZoomEndTime time="5,248.067 ns"></ZoomEndTime>
-      <Cursor1Time time="5,928.066 ns"></Cursor1Time>
+      <ZoomStartTime time="14,840.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="20,955.001 ns"></ZoomEndTime>
+      <Cursor1Time time="18,450.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="272"></NameColumnWidth>
-      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+      <NameColumnWidth column_width="241"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="18" />
    <wave_markers>
-      <marker time="1551540" label="" />
-      <marker time="4850000" label="" />
+      <marker time="1544174" label="" />
+      <marker time="4450000" label="" />
+      <marker time="1950000" label="" />
+      <marker time="16450000" label="" />
    </wave_markers>
    <wvobject fp_name="/router_test_top/SystemClock" type="logic">
       <obj_property name="ElementShortName">SystemClock</obj_property>
@@ -48,26 +50,32 @@
    <wvobject fp_name="/router_test_top/top_io/din" type="array">
       <obj_property name="ElementShortName">din[15:0]</obj_property>
       <obj_property name="ObjectShortName">din[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/router_test_top/top_io/dout" type="array">
       <obj_property name="ElementShortName">dout[15:0]</obj_property>
       <obj_property name="ObjectShortName">dout[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/router_test_top/top_io/valido_n" type="array">
       <obj_property name="ElementShortName">valido_n[15:0]</obj_property>
       <obj_property name="ObjectShortName">valido_n[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/router_test_top/top_io/frame_n" type="array">
       <obj_property name="ElementShortName">frame_n[15:0]</obj_property>
       <obj_property name="ObjectShortName">frame_n[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/router_test_top/top_io/valid_n" type="array">
       <obj_property name="ElementShortName">valid_n[15:0]</obj_property>
       <obj_property name="ObjectShortName">valid_n[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/router_test_top/top_io/busy_n" type="array">
       <obj_property name="ElementShortName">busy_n[15:0]</obj_property>
       <obj_property name="ObjectShortName">busy_n[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/router_test_top/top_io/frameo_n" type="array">
       <obj_property name="ElementShortName">frameo_n[15:0]</obj_property>
@@ -77,5 +85,29 @@
    <wvobject fp_name="/router_test_top/dut/arbiter/address" type="array">
       <obj_property name="ElementShortName">address[15:0][3:0]</obj_property>
       <obj_property name="ObjectShortName">address[15:0][3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/router_test_top/dut/arbiter/frameo_nt" type="array">
+      <obj_property name="ElementShortName">frameo_nt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">frameo_nt[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/router_test_top/dut/arbiter/frameo_n" type="array">
+      <obj_property name="ElementShortName">frameo_n[15:0]</obj_property>
+      <obj_property name="ObjectShortName">frameo_n[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/router_test_top/dut/arbiter/getheader_n" type="array">
+      <obj_property name="ElementShortName">getheader_n[15:0]</obj_property>
+      <obj_property name="ObjectShortName">getheader_n[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/router_test_top/dut/arbiter/wait_n" type="array">
+      <obj_property name="ElementShortName">wait_n[15:0]</obj_property>
+      <obj_property name="ObjectShortName">wait_n[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/router_test_top/dut/arbiter/running" type="array">
+      <obj_property name="ElementShortName">running[15:0]</obj_property>
+      <obj_property name="ObjectShortName">running[15:0]</obj_property>
    </wvobject>
 </wave_config>
